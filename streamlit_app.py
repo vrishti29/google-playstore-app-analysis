@@ -17,6 +17,9 @@ st.header('Which Genre apps are performing best on Google Play Store?')
 #Load data
 df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-app-analysis/master/data/googleplaystore.csv')
 
+with st.expander('Data visualisation'):
+  st.scatter_chart(data=df, x='Rating', y='Reviews')
+  
 #Input Features in sidebar
 with st.sidebar:
   st.header('Input Features')
