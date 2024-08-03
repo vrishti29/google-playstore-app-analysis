@@ -4,7 +4,6 @@ import numpy as np
 
 st.set_page_config(page_title = 'Interactive Data analysis')
 st.title('Interactive EDA of Apps on Google Play Store')
-st.write(df.column)
 
 with st.expander('About the app'):
   st.markdown("**What can thsi app do?**")
@@ -17,6 +16,9 @@ st.header('Which Genre apps are performing best on Google Play Store?')
 
 #Load data
 df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-app-analysis/master/data/googleplaystore.csv')
+st.write(df.column)
+with st.expander('Raw Data'):
+  df
 
 with st.expander('Data visualisation'):
   st.scatter_chart(data=df, x='Rating', y='Reviews')
