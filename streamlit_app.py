@@ -4,6 +4,7 @@ import numpy as np
 
 st.set_page_config(page_title = 'Interactive Data analysis')
 st.title('Interactive EDA of Apps on Google Play Store')
+st.write(df.column)
 
 with st.expander('About the app'):
   st.markdown("**What can thsi app do?**")
