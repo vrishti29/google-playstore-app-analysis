@@ -16,7 +16,7 @@ st.header('Which Genre apps are performing best on Google Play Store?')
 
 #Load data
 df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-app-analysis/master/data/googleplaystore.csv')
-st.write(df.column)
+st.write(df.columns)
 with st.expander('Raw Data'):
   df
 
