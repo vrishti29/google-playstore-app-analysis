@@ -21,7 +21,9 @@ with st.expander('Raw Data'):
   df
 
 with st.expander('Data visualisation'):
-  st.scatter_chart(data=df, x='Rating', y='Reviews')
+  df.columns = df.columns.str.strip()
+  if 'Rating' in df.columns and 'Reviews' indf.columns:
+    st.scatter_chart(data=df, x='Rating', y='Reviews')
   
 #Input Features in sidebar
 with st.sidebar:
