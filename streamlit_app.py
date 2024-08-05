@@ -28,11 +28,9 @@ with st.sidebar:
        'GAME', 'HOUSE_AND_HOME', 'HEALTH_AND_FITNESS', 'LIBRARIES_AND_DEMO','LIFESTYLE', 'MEDICAL','NEWS_AND_MAGAZINES',
        'TOOLS', 'PARENTING', 'VIDEO_PLAYERS', 'PERSONALIZATION','PHOTOGRAPHY', 'SOCIAL', 'SPORTS', 
        'PRODUCTIVITY',  'TRAVEL_AND_LOCAL', 'SHOPPING','WEATHER', 'MAPS_AND_NAVIGATION'))
-  rating = st.slider('Rating', 0,1., 1.2, 1.9, 5. , 4.9, 4.8, 4.7, 4.6, 4.5, 4.4, 4.3, 4.2, 4.1, 4. ,
-       3.9, 3.8, 3.7, 3.6, 3.5, 3.4, 3.3, 3.2, 3.1, 3. , 2.9, 2.8, 2.7,
-       2.6, 2.5, 2.4, 2.3, 2.2, 2.1, 2. , 1.8, 1.7, 1.6, 1.5, 1.4,)
+  rating = st.slider('Rating', min_value=0.0, max_value=5.0, value=4.9, step=0.1)
 
-  type = st.electbox('Type', ('free', 'paid'))
+  type = st.selectbox('Type', ('free', 'paid'))
 
   data = {'category' : category,
           'rating' : rating,
