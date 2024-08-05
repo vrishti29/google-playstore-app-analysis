@@ -33,10 +33,9 @@ with st.sidebar:
        'PRODUCTIVITY',  'TRAVEL_AND_LOCAL', 'SHOPPING','WEATHER', 'MAPS_AND_NAVIGATION'))
   rating = st.slider('Rating', min_value=0.0, max_value=5.0, value=4.9, step=0.1)
   #size
-  installs = st.slider('Installs', min_value=-1, max_value=10000000000, value=(-1, 10000000000))
+  installs = st.slider('Installs', min_value=-1, max_value=10000000000, value=(-1, 10000000000), step = 1000)
   type = st.selectbox('Type', ('Free', 'Paid'))
-  content_rating = st.selectbox('Content Rating', ('Everyone', 'Everyone 10+', 'Teen', 'Mature 17+', 'Unrated',
-       'Adults only 18+'))
+  content_rating = st.selectbox('Content Rating', ('Everyone', 'Everyone 10+', 'Teen', 'Mature 17+', 'Unrated', 'Adults only 18+'))
   #genres
   data = {'category' : category,
           'rating' : rating,
