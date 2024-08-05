@@ -22,9 +22,6 @@ with st.expander('Raw Data'):
   df
 
 
-  st.write('**y**')
-  y_raw = df.App
-  y_raw
 
 #Input Features in sidebar
 with st.sidebar:
