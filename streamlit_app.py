@@ -1,15 +1,16 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(page_title = 'Interactive Data analysis')
 st.title('Interactive EDA of Apps on Google Play Store')
 
 with st.expander('About the app'):
-  st.markdown("**What can thsi app do?**")
+  st.markdown("**What can this app do?**")
   st.info("")
   st.markdown('**How can you use the app?**')
-  st.warning('To engage with the app.')
+  st.warning('To find the best suited app according to the input features.')
 
 #Question header
 st.header('Which Genre apps are performing best on Google Play Store?')
@@ -20,6 +21,14 @@ df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-a
 with st.expander('Raw Data'):
   df
 
+  st.write('**X**')
+  X_raw = df.drop('App', axis = 1)
+  X_raw
+
+  st.write('**y**')
+  y_raw = df.App
+  y_raw
+
 #Input Features in sidebar
 with st.sidebar:
   st.header('Input Features')
@@ -29,11 +38,25 @@ with st.sidebar:
        'TOOLS', 'PARENTING', 'VIDEO_PLAYERS', 'PERSONALIZATION','PHOTOGRAPHY', 'SOCIAL', 'SPORTS', 
        'PRODUCTIVITY',  'TRAVEL_AND_LOCAL', 'SHOPPING','WEATHER', 'MAPS_AND_NAVIGATION'))
   rating = st.slider('Rating', min_value=0.0, max_value=5.0, value=4.9, step=0.1)
+  #size
+  installs = st.slider('Installs', min_value=-1, max_value=10000000000, value=(-1, 10000000000))
   type = st.selectbox('Type', ('Free', 'Paid'))
-
+  content rating = st.selectbox('Content Rating', ('Everyone', 'Everyone 10+', 'Teen', 'Mature 17+', 'Unrated',
+       'Adults only 18+'))
+  #genres
   data = {'category' : category,
           'rating' : rating,
-          'type' : type}
+          'installs' : installs,
+          'type' : type,
+          'content rating' : content rating
+         }
 
   input_df = pd.DataFrame(data, index[0])
+  input_features = pd.concat([input_df, X_raw], axis=0)
   
+with st.expander('Input features'):
+  st.write('**Input data**')
+  input_df
+  st.write('**Combined App data**')
+  input_features
+
