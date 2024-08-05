@@ -21,9 +21,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-a
 with st.expander('Raw Data'):
   df
 
-  st.write('**X**')
-  X_raw = df.drop('App', axis = 1)
-  X_raw
 
   st.write('**y**')
   y_raw = df.App
