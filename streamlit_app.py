@@ -29,8 +29,7 @@ with st.sidebar:
        'TOOLS', 'PARENTING', 'VIDEO_PLAYERS', 'PERSONALIZATION','PHOTOGRAPHY', 'SOCIAL', 'SPORTS', 
        'PRODUCTIVITY',  'TRAVEL_AND_LOCAL', 'SHOPPING','WEATHER', 'MAPS_AND_NAVIGATION'))
   rating = st.slider('Rating', min_value=0.0, max_value=5.0, value=4.9, step=0.1)
-
-  type = st.selectbox('Type', ('free', 'paid'))
+  type = st.selectbox('Type', ('Free', 'Paid'))
 
   data = {'category' : category,
           'rating' : rating,
