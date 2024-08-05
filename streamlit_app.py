@@ -20,11 +20,6 @@ df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-a
 with st.expander('Raw Data'):
   df
 
-'''with st.expander('Data visualisation'):
-  df.columns = df.columns.str.strip()
-  if 'Rating' in df.columns and 'Reviews' in df.columns:
-    st.scatter_chart(data=df, x='Rating', y='Reviews')'''
-  
 #Input Features in sidebar
 with st.sidebar:
   st.header('Input Features')
