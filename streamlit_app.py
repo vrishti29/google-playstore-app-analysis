@@ -41,14 +41,14 @@ with st.sidebar:
   #size
   installs = st.slider('Installs', min_value=-1, max_value=10000000000, value=(-1, 10000000000))
   type = st.selectbox('Type', ('Free', 'Paid'))
-  content rating = st.selectbox('Content Rating', ('Everyone', 'Everyone 10+', 'Teen', 'Mature 17+', 'Unrated',
+  content_rating = st.selectbox('Content Rating', ('Everyone', 'Everyone 10+', 'Teen', 'Mature 17+', 'Unrated',
        'Adults only 18+'))
   #genres
   data = {'category' : category,
           'rating' : rating,
           'installs' : installs,
           'type' : type,
-          'content rating' : content rating
+          'content rating' : content_rating
          }
 
   input_df = pd.DataFrame(data, index[0])
