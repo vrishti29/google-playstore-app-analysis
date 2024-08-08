@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.express as px
 #from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(page_title = 'Interactive Data analysis')
@@ -18,10 +19,11 @@ st.header('Which Genre apps are performing best on Google Play Store?')
 #Load data
 df = pd.read_csv('https://raw.githubusercontent.com/vrishti29/google-playstore-app-analysis/master/data/googleplaystore.csv')
 
-with st.expander('Raw Data'):
+with st.button('Raw Data'):
   df
 
-
+with st.expander('Data Visualisation'):
+  
 
 #Input Features in sidebar
 with st.sidebar:
